@@ -22,11 +22,8 @@ clean:
 	$(Q)rm -rf $(BUILD) doc/html
 	$(Q)rm -f $(JZ2440_ROOT_PATH)/compile_commands.json
 
-nor:
-	$(Q)openocd -f openocd_jz2440v3.cfg -c "flash write_image erase build/100ask_jz2440.bin;exit"
-
 openocd:
-	$(Q)openocd -f openocd_jz2440v3_sdram.cfg
+	$(Q)openocd -f openocd_jz2440v3.cfg
 
 debug:
 	$(Q)$(CROSS_COMPILE)gdb

@@ -1,0 +1,8 @@
+OBJS = $(patsubst %.c,%.o,$(wildcard *.c))
+OBJS += $(patsubst %.S,%.o,$(wildcard *.S))
+
+%.o: %.c
+	$(Q)$(CC) $(CFLAGS) -c $< -o $(BUILD)/$@
+
+%.o: %.S
+	$(Q)$(CC) $(CFLAGS) -c $< -o $(BUILD)/$@
